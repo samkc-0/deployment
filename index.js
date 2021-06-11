@@ -1,13 +1,7 @@
-const express = require("express");
+const server = require("./server");
 
-const app = express();
+const port = process.env.PORT || 3003;
 
-var port = process.env.PATH || 3040;
-
-app.get("/", (_, response) => {
-  response.send(`Hi Bren! process.env.path=${port}.`);
-});
-
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Listening on port ${port}...`);
 });
